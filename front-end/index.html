@@ -17,12 +17,12 @@
 			crossorigin="anonymous"
 			defer
 		></script>
-		<link rel="stylesheet" type="text/css" href="../assets/style/style.css" />
+		<link rel="stylesheet" type="text/css" href="Style/style.css" />
 	</head>
 	<body>
 		<nav class="navbar navbar-expand-lg">
 			<div class="container-fluid">
-				<img id="navbar-img" src="../assets/imagens/332860.svg" height="180px" />
+				<img id="navbar-img" src="imagens/332860.svg" height="180px" />
 				<button
 					class="navbar-toggler"
 					type="button"
@@ -73,32 +73,30 @@
 				</div>
 			</div>
 		</nav>
-		<div class="body-color" id="map">
-
-		  </div>
-			<div class="container"></div>
+		<div id="map">
+			
+		</div>
+		<div>
 			<div>
-				<div>
-					<label for="titulo" class="form-label">Título da ocorrência</label>
-					<input type="text" id="titulo" class="form-control" /></div>
-				</div>
-				<div>
-					<label for="tipo" class="form-label">Tipo da ocorrência</label>
-					<select id="tipo" class="form-select">
+				<label for="titulo" class="form-label">Título da ocorrência</label>
+				<input type="text" id="titulo" class="form-control" />
+			</div>
+			<div>
+				<label for="tipo" class="form-label">Tipo da ocorrência</label>
+				<select id="tipo" class="form-select">
 					<option value="assalto">assalto</option>
 					<option value="furto">furto</option>
 					<option value="homicidio">homicidio</option>
 					<option value="latrocinio">latrocinio</option>
-					</select>
-				</div>
-				<div>
-					<label for="data" class="form-label">Data da ocorrência</label>
-					<input type="date" id="data"  class="form-control" />
-				</div>
-				<div>
-					<label for="hora"  class="form-label">Hora da ocorrência</label>
-					<input type="time" id="hora"class="form-control" />
-				</div>
+				</select>
+			</div>
+			<div>
+				<label for="data" class="form-label">Data da ocorrência</label>
+				<input type="date" id="data"  class="form-control" />
+			</div>
+			<div>
+				<label for="hora"  class="form-label">Hora da ocorrência</label>
+				<input type="time" id="hora"class="form-control" />
 			</div>
 		</div>
 		<!-- Modal add/edit -->
@@ -118,11 +116,11 @@
 				<div>
 					<a href="" class="me-4 text-reset">
 						<i class="fab fa-facebook-f"></i>
-						<img src="../assets/imagens/icons8-facebook.svg" width="50px">
+						<img src="./imagens/icons8-facebook.svg" width="50px">
 			
 					<a href="" class="me-4 text-reset">
 						<i class="fab fa-instagram"></i>
-						<img src="../assets/imagens/icons8-instagram-96.svg" width="50px">
+						<img src="imagens/icons8-instagram-96.svg" width="50px">
 					</a>
 				
 					
@@ -153,7 +151,7 @@
 							</p>
 						</div>
 						<!-- Grid column -->
-
+						
 						<!-- Grid column -->
 						<div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
 							<!-- Links -->
@@ -232,7 +230,7 @@
 					</div>
 						<div class="d-flex justify-content-end">
 							<img
-								src="../assets/imagens/254346.svg"
+								src="imagens/254346.svg"
 								alt=""
 								width="80px"
 							/>
@@ -254,6 +252,11 @@
 			<!-- Copyright -->
 		</footer>
 		<!-- Footer -->
-	  <script src="../assets/script/script.js"></script>
+		<script src="./script.js"></script>
+		<script
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+			defer
+	  	></script>
+	 
 	</body>
 </html>
