@@ -19,4 +19,4 @@ router
 	.patch(atualizarCordenada)
 	.delete(deletarCordenada);
 
-module.export = { router };
+module.exports = { router };
