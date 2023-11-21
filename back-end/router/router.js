@@ -1,17 +1,22 @@
 const cors = require('cors');
 const express = require('express');
 
-const app = express();
+const router = express.Router();
 
-app.use(express.json);
+const {
+	criaOcorrencia,
+	listarOcorrencia,
+	buscarPorId,
+	atualizarCordenada,
+	deletarCordenada,
+} = require('../controller/ocorrenciaController');
 
-app.use(cors());
+router.route('/ocorrencia').post(criaOcorrencia).get(listarOcorrencia);
 
-app.post();
-app.get();
-app.delete();
-app.put();
+router
+	.route('/ocorrencia/:id')
+	.get(buscarPorId)
+	.patch(atualizarCordenada)
+	.delete(deletarCordenada);
 
-app.listen(3000, () => {
-	console('serve ON');
-});
+module.export = { router };

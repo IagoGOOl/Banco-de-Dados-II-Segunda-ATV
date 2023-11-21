@@ -6,6 +6,10 @@
 	font-family: Roboto;
 }
 
+.form-width {
+	width: 1250px;
+}
+
 #map {
 	height: 480px;
 	width: 100%;
