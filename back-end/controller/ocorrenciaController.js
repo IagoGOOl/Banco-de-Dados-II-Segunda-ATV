@@ -33,32 +33,41 @@ async function criaOcorrencia(req, res) {
 }
 
 async function deletarCordenada(req, res) {
-	const ocorrencia = await ocorrenciaModel.findById(req.params.id);
+	const { id } = req.params;
+	const ocorrencia = await ocorrenciaModel.findByIdAndDelete(id);
 
 	if (!ocorrencia) {
 		res.status(404).json({ erro: 'ocorrencia não encontrado' });
 		return;
 	}
 
-	await ocorrencia.findByIdAndDelete(req.params.id);
+	await ocorrenciaModel.findByIdAndDelete(id);
 	res.status(204).json({ mensagem: 'ocorrencia removido com sucesso' });
 }
 
 async function atualizarCordenada(req, res) {
 	const { id } = req.params;
-	const ocorrencia = await ocorrenciaModel.findById(id);
+	const { body } = req;
 
-	if (!ocorrencia) {
-		res.status(404).json({ erro: 'ocorrencia não encontrado' });
-		return;
+	try {
+		const ocorrencia = await ocorrenciaModel.findByIdAndUpdate(
+			id,
+			body,
+			{ new: true }
+		);
+
+		if (!ocorrencia) {
+			return res.status(404).json({ erro: 'ocorrencia não encontrado' });
+		}
+
+		return res.status(200).json(ocorrencia.toJSON());
+	} catch (error) {
+		console.error('Erro durante a atualização:', error);
+		return res.status(500).json({ erro: 'Erro interno do servidor' });
 	}
-
-	const result = await ocorrencia.findByIdAndUpdate(id, req.body, {
-		new: true,
-	});
-
-	res.status(201).json(result);
 }
+
+
 async function buscarPorId(req, res) {
 	const ocorrencia = await ocorrenciaModel.findById(req.params.id);
 

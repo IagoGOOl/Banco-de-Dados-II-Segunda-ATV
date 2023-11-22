@@ -7,8 +7,8 @@ const ocorrenciaSchema = new Schema({
 	hora: String,
 	tipo: {
 		type: String,
-		enum: ['Assalto', 'Furto', 'Homicidio', 'latrocinio'],
-		default: 'Assalto',
+		enum: ['assalto', 'furto', 'homicidio', 'latrocinio'],
+		default: 'assalto',
 	},
 	cordenada: {
 		type: {
@@ -23,6 +23,6 @@ const ocorrenciaSchema = new Schema({
 	},
 });
 
-const Ocorrencia = mongoose.model('Evento', ocorrenciaSchema);
+const Ocorrencia = mongoose.model('Ocorrencia', ocorrenciaSchema);
 
 module.exports = Ocorrencia;
