@@ -19,7 +19,7 @@ async function criaOcorrencia(req, res) {
 		data,
 		hora,
 		cordenada,
-	  });
+	});
 
 	ocorrencia
 		.save()
