@@ -55,7 +55,7 @@ function salvar() {
 }
 
 function lista() {
-	fetch('http://localhost:3000/resgata')
+	fetch('http://localhost:3000/ocorrencia')
 		.then((res) => res.json())
 		.then((ponto) => {
 			marker = new google.maps.Marker({ map: map });

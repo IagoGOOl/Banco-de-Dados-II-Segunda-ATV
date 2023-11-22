@@ -43,8 +43,37 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  margin: 10px;
 }
 
 .add-btn {
   margin-top: 5px;
+}
+
+.card-list {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin: 10px 0 10px 0;
+  padding: 10px 0 10px 0;
+}
+
+#tipo {
+  margin: 0;
+  padding: 0;
+}
+
+#id {
+  padding: 0;
+  margin: 0;
+  font-size: 5px;
+  color: white;
+}
+#title {
+  font-weight: 700;
+}
+
+.listar {
+  width: 50%;
 }
