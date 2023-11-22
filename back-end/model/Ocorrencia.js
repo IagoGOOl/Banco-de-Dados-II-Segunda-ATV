@@ -7,7 +7,7 @@ const ocorrenciaSchema = new Schema({
 	hora: String,
 	tipo: {
 		type: String,
-		enum: ['Assalto', 'Furto', 'Homicidio', 'Latrocinio'],
+		enum: ['Assalto', 'Furto', 'Homicidio', 'latrocinio'],
 		default: 'Assalto',
 	},
 	cordenada: {

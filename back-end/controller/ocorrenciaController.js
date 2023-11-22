@@ -1,7 +1,7 @@
 const ocorrenciaModel = require('../model/Ocorrencia');
 
 async function listarOcorrencia(req, res) {
-	const policia = await ocorrenciaModel.findAll();
+	const policia = await ocorrenciaModel.find({});
 	res.status(200).send(policia);
 }
 
@@ -13,13 +13,13 @@ async function criaOcorrencia(req, res) {
 		coordinates: [lat, lng],
 	};
 
-	const ocorrencia = ocorrenciaModel.build({
+	const ocorrencia = new ocorrenciaModel({
 		titulo,
 		tipo,
 		data,
 		hora,
 		cordenada,
-	});
+	  });
 
 	ocorrencia
 		.save()
