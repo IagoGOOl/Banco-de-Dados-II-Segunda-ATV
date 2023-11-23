@@ -1,7 +1,7 @@
 let map;
 let marker;
 
-let center = { lat: -6.888463202449027, lng: -38.558930105104125 };
+let center = { lng: -38.558930105104125,  lat: -6.888463202449027};
 
 function initMap() {
 	map = new google.maps.Map(document.getElementById('map'), {
